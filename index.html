@@ -3,927 +3,560 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muhammad Usama Khan — Researcher in Medical AI</title>
+<title>Muhammad Usama Khan — Personal Website</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #f9f8f6;
-    --bg2: #f2f0ec;
-    --bg3: #ffffff;
-    --border: rgba(0,0,0,0.08);
-    --border2: rgba(0,0,0,0.15);
-    --accent: #1a6b5a;
-    --accent2: #22896f;
-    --text: #1a1a1a;
-    --text2: #555550;
-    --text3: #999890;
-    --teal: #1a6b5a;
-    --teal-dim: rgba(26,107,90,0.08);
-    --coral: #c0392b;
-  }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 15px; }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 400;
+  background: #f5f4f0;
+  color: #2c2c2a;
+  display: flex;
+  min-height: 100vh;
+}
 
-  html { scroll-behavior: smooth; }
+#sidebar {
+  width: 220px;
+  min-width: 220px;
+  background: #eceae4;
+  border-right: 1px solid #d8d6cf;
+  padding: 2rem 1.5rem;
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Outfit', sans-serif;
-    font-weight: 300;
-    line-height: 1.7;
-    font-size: 16px;
-  }
+.sidebar-name {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c2c2a;
+  line-height: 1.3;
+}
 
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.2rem 3rem;
-    background: rgba(249,248,246,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
+.sidebar-tagline {
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #7a7060;
+  margin-top: 0.2rem;
+}
 
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-style: italic;
-    color: var(--accent);
-    letter-spacing: 0.02em;
-    text-decoration: none;
-  }
+.sidebar-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
 
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
+.sidebar-nav li a {
+  display: block;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.88rem;
+  color: #555248;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.15s, color 0.15s;
+}
 
-  .nav-links a {
-    color: var(--text2);
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 400;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
+.sidebar-nav li a:hover,
+.sidebar-nav li a.active {
+  background: #d8d6cf;
+  color: #1a1a1a;
+  font-weight: 500;
+}
 
-  .nav-links a:hover { color: var(--accent); }
+.sidebar-updated {
+  font-size: 0.78rem;
+  color: #999;
+  font-style: italic;
+  margin-top: auto;
+  line-height: 1.5;
+}
 
-  /* ── HERO ── */
-  #hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 8rem 3rem 4rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 4rem;
-  }
+.sidebar-socials {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
 
-  .hero-text {}
+.sidebar-socials a {
+  font-size: 0.75rem;
+  color: #7a7060;
+  text-decoration: none;
+  border: 1px solid #d8d6cf;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  transition: all 0.15s;
+}
 
-  .hero-eyebrow {
-    font-size: 0.78rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--teal);
-    font-weight: 500;
-    margin-bottom: 1.2rem;
-  }
+.sidebar-socials a:hover { background: #d8d6cf; color: #2c2c2a; }
 
-  h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.8rem, 5vw, 4.2rem);
-    font-weight: 300;
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-    color: var(--text);
-    margin-bottom: 0.3rem;
-  }
+#main {
+  margin-left: 220px;
+  flex: 1;
+  max-width: 860px;
+  padding: 3rem 3.5rem;
+}
 
-  .hero-title-accent {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.1rem, 2vw, 1.5rem);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--accent);
-    margin-bottom: 1.6rem;
-    display: block;
-  }
+.page-section {
+  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #d8d6cf;
+}
 
-  .hero-bio {
-    color: var(--text2);
-    font-size: 1rem;
-    max-width: 48ch;
-    line-height: 1.8;
-    margin-bottom: 2.4rem;
-  }
+.page-section:last-child { border-bottom: none; }
 
-  .hero-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-  }
+h1.section-title {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.9rem;
+  font-weight: 400;
+  color: #2c2c2a;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #2c2c2a;
+}
 
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.55rem 1.2rem;
-    border-radius: 2px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.2s;
-    cursor: pointer;
-    border: none;
-  }
+.home-top {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
 
-  .btn-primary {
-    background: var(--accent);
-    color: #ffffff;
-  }
-  .btn-primary:hover { background: var(--accent2); }
+.avatar {
+  width: 130px;
+  height: 130px;
+  min-width: 130px;
+  border-radius: 50%;
+  background: #d8d6cf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Crimson Pro', serif;
+  font-size: 2.2rem;
+  color: #7a7060;
+  border: 2px solid #c8c6be;
+}
 
-  .btn-outline {
-    background: transparent;
-    color: var(--text2);
-    border: 1px solid var(--border2);
-  }
-  .btn-outline:hover { color: var(--text); border-color: var(--accent); }
+.home-intro h2 {
+  font-family: 'Crimson Pro', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #2c2c2a;
+  margin-bottom: 0.3rem;
+}
 
-  /* hero visual */
-  .hero-visual {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
+.home-intro .position {
+  font-size: 0.92rem;
+  color: #7a7060;
+  margin-bottom: 0.8rem;
+  font-style: italic;
+}
 
-  .avatar-ring {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    border: 1px solid var(--accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
+.home-intro p { font-size: 0.93rem; color: #444; line-height: 1.75; }
 
-  .avatar-ring::before {
-    content: '';
-    position: absolute;
-    inset: 8px;
-    border-radius: 50%;
-    border: 1px solid var(--border2);
-  }
+.home-intro p a { color: #3a5a8a; text-decoration: none; }
+.home-intro p a:hover { text-decoration: underline; }
 
-  .avatar-initials {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
-    font-weight: 300;
-    color: var(--accent);
-    letter-spacing: 0.05em;
-  }
+.news-block { margin-top: 1.5rem; }
 
-  .affiliation-card {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 1.2rem 1.6rem;
-    text-align: center;
+.news-block h3 {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #2c2c2a;
+}
+
+.news-list {
+  list-style: disc;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.news-list li { font-size: 0.9rem; color: #444; line-height: 1.6; }
+
+.news-list li a { color: #3a5a8a; text-decoration: none; }
+.news-list li a:hover { text-decoration: underline; }
+
+.research-interests {
+  list-style: disc;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.research-interests li { font-size: 0.92rem; color: #444; line-height: 1.6; }
+
+.research-detail h3 {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #2c2c2a;
+  margin-bottom: 0.4rem;
+  margin-top: 1.4rem;
+}
+
+.research-detail p { font-size: 0.9rem; color: #555; line-height: 1.75; }
+
+.pub-entry {
+  display: flex;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #e8e6e0;
+  align-items: flex-start;
+}
+
+.pub-entry:last-child { border-bottom: none; }
+
+.pub-year-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #fff;
+  background: #4a6a3a;
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+  min-width: 40px;
+  text-align: center;
+  margin-top: 0.2rem;
+}
+
+.pub-body .pub-title {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #2c2c2a;
+  line-height: 1.5;
+  margin-bottom: 0.2rem;
+}
+
+.pub-body .pub-title a { color: #3a5a8a; text-decoration: none; }
+.pub-body .pub-title a:hover { text-decoration: underline; }
+
+.pub-body .pub-meta { font-size: 0.82rem; color: #777; line-height: 1.5; }
+.pub-body .pub-meta em { font-style: italic; }
+
+.software-card {
+  border: 1px solid #d8d6cf;
+  border-radius: 3px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1rem;
+  background: #fff;
+}
+
+.software-card h3 {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2c2c2a;
+  margin-bottom: 0.3rem;
+}
+
+.software-card h3 a { color: #3a5a8a; text-decoration: none; }
+.software-card h3 a:hover { text-decoration: underline; }
+
+.software-card p { font-size: 0.87rem; color: #555; line-height: 1.65; }
+
+.sw-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.45rem;
+  background: #eceae4;
+  border: 1px solid #d8d6cf;
+  border-radius: 2px;
+  color: #666;
+  margin-right: 0.3rem;
+  margin-top: 0.5rem;
+}
+
+.talk-entry {
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #e8e6e0;
+}
+
+.talk-entry:last-child { border-bottom: none; }
+
+.talk-title { font-size: 0.92rem; font-weight: 500; color: #2c2c2a; margin-bottom: 0.2rem; }
+.talk-meta { font-size: 0.82rem; color: #777; font-style: italic; }
+
+.dataset-card {
+  border: 1px solid #d8d6cf;
+  border-radius: 3px;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 0.9rem;
+  background: #fff;
+}
+
+.dataset-card h3 {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c2c2a;
+  margin-bottom: 0.3rem;
+}
+
+.dataset-card p { font-size: 0.86rem; color: #555; line-height: 1.65; }
+
+.teaching-entry {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #e8e6e0;
+}
+
+.teaching-entry:last-child { border-bottom: none; }
+
+.teaching-title { font-size: 0.92rem; font-weight: 500; color: #2c2c2a; }
+.teaching-meta { font-size: 0.82rem; color: #777; margin-top: 0.15rem; }
+
+.contact-table { width: 100%; border-collapse: collapse; }
+
+.contact-table tr td {
+  padding: 0.55rem 0.5rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #e8e6e0;
+  vertical-align: top;
+}
+
+.contact-table tr:last-child td { border-bottom: none; }
+
+.contact-table td:first-child {
+  color: #888;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  width: 110px;
+  padding-top: 0.65rem;
+  font-weight: 500;
+}
+
+.contact-table td a { color: #3a5a8a; text-decoration: none; }
+.contact-table td a:hover { text-decoration: underline; }
+
+.available-badge {
+  display: inline-block;
+  background: #eaf4e2;
+  color: #3a6a1a;
+  border: 1px solid #b8d8a0;
+  border-radius: 2px;
+  font-size: 0.78rem;
+  padding: 0.2rem 0.6rem;
+  margin-top: 1rem;
+}
+
+.keywords {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 1.2rem;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    position: static;
     width: 100%;
-    max-width: 300px;
-  }
-
-  .affil-label {
-    font-size: 0.72rem;
-    color: var(--text3);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 0.3rem;
-  }
-
-  .affil-name {
-    font-size: 0.92rem;
-    color: var(--text);
-    font-weight: 400;
-    line-height: 1.4;
-  }
-
-  .affil-sub {
-    font-size: 0.8rem;
-    color: var(--text2);
-    margin-top: 0.2rem;
-    font-style: italic;
-  }
-
-  /* ── SECTION COMMONS ── */
-  section {
-    padding: 5rem 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .section-header {
-    display: flex;
-    align-items: baseline;
-    gap: 1.2rem;
-    margin-bottom: 3rem;
-  }
-
-  .section-num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--accent);
-    opacity: 0.7;
-  }
-
-  h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    font-weight: 400;
-    color: var(--text);
-    letter-spacing: -0.01em;
-  }
-
-  .section-line {
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-    margin-left: 1rem;
-    align-self: center;
-  }
-
-  /* ── ABOUT ── */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-
-  .about-text p {
-    color: var(--text2);
-    line-height: 1.9;
-    margin-bottom: 1rem;
-    font-size: 0.97rem;
-  }
-
-  .about-text p strong {
-    color: var(--text);
-    font-weight: 500;
-  }
-
-  .stat-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .stat-card {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 1.4rem 1.2rem;
-  }
-
-  .stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.4rem;
-    font-weight: 300;
-    color: var(--accent);
-    line-height: 1;
-    margin-bottom: 0.3rem;
-  }
-
-  .stat-label {
-    font-size: 0.78rem;
-    color: var(--text3);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-
-  /* ── RESEARCH ── */
-  #research { background: var(--bg2); padding-top: 5rem; padding-bottom: 5rem; }
-
-  .research-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .res-card {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 1.8rem;
-    transition: border-color 0.2s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .res-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px; height: 100%;
-    background: var(--accent);
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-
-  .res-card:hover { border-color: var(--border2); }
-  .res-card:hover::before { opacity: 1; }
-
-  .res-icon {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--teal);
-    letter-spacing: 0.1em;
-    margin-bottom: 0.8rem;
-    display: block;
-  }
-
-  .res-title {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 0.7rem;
-    line-height: 1.4;
-  }
-
-  .res-desc {
-    font-size: 0.85rem;
-    color: var(--text2);
-    line-height: 1.7;
-  }
-
-  /* ── PUBLICATIONS ── */
-  .pub-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .pub-item {
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--border);
-    display: grid;
-    grid-template-columns: 60px 1fr;
-    gap: 1.5rem;
-    align-items: start;
-    transition: background 0.15s;
-  }
-
-  .pub-item:first-child { border-top: 1px solid var(--border); }
-
-  .pub-year {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--accent);
-    padding-top: 0.3rem;
-    letter-spacing: 0.04em;
-  }
-
-  .pub-content {}
-
-  .pub-title {
-    font-size: 0.97rem;
-    color: var(--text);
-    font-weight: 400;
-    line-height: 1.5;
-    margin-bottom: 0.35rem;
-  }
-
-  .pub-title a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-  .pub-title a:hover { color: var(--accent); }
-
-  .pub-meta {
-    font-size: 0.82rem;
-    color: var(--text3);
-    line-height: 1.5;
-  }
-
-  .pub-meta em {
-    color: var(--text2);
-    font-style: italic;
-  }
-
-  .pub-tags {
-    display: flex;
+    border-right: none;
+    border-bottom: 1px solid #d8d6cf;
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 0.6rem;
+    padding: 1rem;
   }
-
-  .tag {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.6rem;
-    border: 1px solid var(--border2);
-    border-radius: 2px;
-    color: var(--text3);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-
-  .tag-teal { border-color: rgba(79,184,160,0.3); color: var(--teal); }
-  .tag-accent { border-color: rgba(201,169,110,0.3); color: var(--accent); }
-
-  /* ── SKILLS ── */
-  #skills { background: var(--bg2); }
-
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-
-  .skill-group {}
-
-  .skill-group-title {
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 500;
-    margin-bottom: 1rem;
-    padding-bottom: 0.6rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .skill-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .skill-name {
-    font-size: 0.88rem;
-    color: var(--text2);
-    font-weight: 400;
-  }
-
-  .skill-bar {
-    width: 80px;
-    height: 2px;
-    background: var(--border2);
-    border-radius: 1px;
-    overflow: hidden;
-  }
-
-  .skill-fill {
-    height: 100%;
-    background: var(--teal);
-    border-radius: 1px;
-  }
-
-  /* ── CONTACT ── */
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-
-  .contact-intro {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 300;
-    line-height: 1.4;
-    color: var(--text);
-    margin-bottom: 1.2rem;
-  }
-
-  .contact-sub {
-    font-size: 0.92rem;
-    color: var(--text2);
-    line-height: 1.8;
-    margin-bottom: 2rem;
-  }
-
-  .contact-items {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .contact-item {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-  }
-
-  .ci-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text3);
-    padding-top: 0.1rem;
-    min-width: 60px;
-    font-weight: 500;
-  }
-
-  .ci-value {
-    font-size: 0.9rem;
-    color: var(--text2);
-  }
-
-  .ci-value a {
-    color: var(--accent);
-    text-decoration: none;
-  }
-
-  .ci-value a:hover { text-decoration: underline; }
-
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 2rem 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .footer-copy {
-    font-size: 0.78rem;
-    color: var(--text3);
-  }
-
-  .footer-built {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--text3);
-  }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .hero-text > * {
-    animation: fadeUp 0.7s ease forwards;
-    opacity: 0;
-  }
-
-  .hero-eyebrow  { animation-delay: 0.1s; }
-  h1             { animation-delay: 0.2s; }
-  .hero-title-accent { animation-delay: 0.3s; }
-  .hero-bio      { animation-delay: 0.4s; }
-  .hero-links    { animation-delay: 0.5s; }
-
-  .hero-visual {
-    animation: fadeUp 0.9s 0.3s ease forwards;
-    opacity: 0;
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { gap: 1.2rem; }
-
-    #hero {
-      grid-template-columns: 1fr;
-      padding-top: 7rem;
-      text-align: center;
-    }
-
-    .hero-visual { order: -1; }
-    .hero-links { justify-content: center; }
-    .hero-bio { margin: 0 auto 2rem; }
-
-    .about-grid,
-    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-
-    .skills-grid { grid-template-columns: 1fr 1fr; }
-
-    section { padding: 3.5rem 1.5rem; }
-    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
-  }
-
-  @media (max-width: 600px) {
-    .skills-grid { grid-template-columns: 1fr; }
-    .stat-grid { grid-template-columns: 1fr 1fr; }
-    .nav-links { display: none; }
-  }
+  #main { margin-left: 0; padding: 2rem 1.5rem; }
+  .home-top { flex-direction: column; }
+}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="#hero" class="nav-logo">M. Usama Khan</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
+<aside id="sidebar">
+  <div>
+    <div class="sidebar-name">Muhammad Usama Khan</div>
+    <div class="sidebar-tagline">Personal website</div>
+  </div>
+
+  <ul class="sidebar-nav">
+    <li><a href="#home" class="active">Home</a></li>
     <li><a href="#research">Research</a></li>
     <li><a href="#publications">Publications</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#software">Software</a></li>
+    <li><a href="#datasets">Datasets</a></li>
+    <li><a href="#contacts">Contacts</a></li>
   </ul>
-</nav>
 
-<!-- HERO -->
-<div id="hero">
-  <div class="hero-text">
-    <p class="hero-eyebrow">PhD · Medical AI · Radiomics</p>
-    <h1>Muhammad<br>Usama Khan</h1>
-    <span class="hero-title-accent">Researcher in Medical Image Analysis &amp; AI</span>
-    <p class="hero-bio">
-      I develop AI-driven radiomics pipelines for clinical decision support, with a focus on breast ultrasound lesion classification, multi-site feature harmonisation, and deep learning-based image analysis.
-    </p>
-    <div class="hero-links">
-      <a href="mailto:usamakhan843@gmail.com" class="btn btn-primary">Email Me</a>
-      <a href="https://linkedin.com/in/usama-khan-0a509211a/" target="_blank" class="btn btn-outline">LinkedIn</a>
-      <a href="https://github.com/usamakhan843" target="_blank" class="btn btn-outline">GitHub</a>
-      <a href="#" class="btn btn-outline">Download CV</a>
-    </div>
+  <div class="sidebar-socials">
+    <a href="mailto:usamakhan843@gmail.com">Email</a>
+    <a href="https://linkedin.com/in/usama-khan-0a509211a/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/usamakhan843" target="_blank">GitHub</a>
   </div>
-  <div class="hero-visual">
-    <div class="avatar-ring">
-      <span class="avatar-initials">MUK</span>
-    </div>
-    <div class="affiliation-card">
-      <p class="affil-label">PhD — Awarded April 2026</p>
-      <p class="affil-name">Università degli Studi di Perugia</p>
-      <p class="affil-sub">Industrial &amp; Information Engineering</p>
-    </div>
-    <div class="affiliation-card">
-      <p class="affil-label">Thesis</p>
-      <p class="affil-name">Radiomics as a tool to differentiate benign vs. malignant lesions in different imaging modalities</p>
-    </div>
-  </div>
-</div>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-header">
-    <span class="section-num">01</span>
-    <h2>About</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="about-grid">
-    <div class="about-text">
-      <p>
-        I am a researcher in <strong>medical image analysis and artificial intelligence</strong>, with a background in Electrical Engineering and a PhD in Industrial and Information Engineering from the University of Perugia, Italy, under the supervision of Prof. Francesco Bianconi.
-      </p>
-      <p>
-        My doctoral research centered on <strong>quantitative radiomics for breast ultrasound</strong>, covering the full pipeline from lesion ROI extraction and preprocessing (cubic spline resampling, non-local means denoising, intensity normalisation) to multi-site heterogeneity analysis and feature-based classification.
-      </p>
-      <p>
-        I am currently seeking <strong>postdoctoral, research, or applied AI positions</strong> in Europe or remote — particularly in medical imaging, radiomics, or clinical AI.
-      </p>
-    </div>
-    <div class="stat-grid">
-      <div class="stat-card">
-        <div class="stat-num">3+</div>
-        <div class="stat-label">Datasets analysed</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">14</div>
-        <div class="stat-label">Augmentation strategies</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Deep feature extractors</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">5+</div>
-        <div class="stat-label">Publications</div>
-      </div>
-    </div>
-  </div>
-</section>
+  <div class="sidebar-updated">Last updated on<br>2 May 2026</div>
+</aside>
 
-<!-- RESEARCH -->
-<section id="research" style="max-width: 100%;">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    <div class="section-header">
-      <span class="section-num">02</span>
-      <h2>Research</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="research-cards">
-      <div class="res-card">
-        <span class="res-icon">[ RADIOMICS ]</span>
-        <div class="res-title">Breast Ultrasound Radiomics</div>
-        <p class="res-desc">Extraction and analysis of quantitative imaging biomarkers from BUS datasets for benign/malignant lesion differentiation using handcrafted and deep features.</p>
-      </div>
-      <div class="res-card">
-        <span class="res-icon">[ PREPROCESSING ]</span>
-        <div class="res-title">Medical Image Preprocessing</div>
-        <p class="res-desc">Cubic spline resampling for isotropic voxel spacing, non-local means denoising, and intensity normalisation pipelines for multi-site data harmonisation.</p>
-      </div>
-      <div class="res-card">
-        <span class="res-icon">[ AUGMENTATION ]</span>
-        <div class="res-title">Synchronized Augmentation</div>
-        <p class="res-desc">ROI-preserving data augmentation in PyTorch using TripleTransform wrappers — ensuring geometric consistency across image, mask-box, and mask-ROI channels.</p>
-      </div>
-      <div class="res-card">
-        <span class="res-icon">[ DEEP LEARNING ]</span>
-        <div class="res-title">Transfer Learning for Medical AI</div>
-        <p class="res-desc">Comparative study of pre-trained deep feature descriptors (DenseNet121, ConvNeXt-B, Swin-V2-S) across multiple ultrasound datasets for classification tasks.</p>
-      </div>
-      <div class="res-card">
-        <span class="res-icon">[ MULTI-SITE ]</span>
-        <div class="res-title">Multi-Site Heterogeneity</div>
-        <p class="res-desc">Investigation of cross-dataset variability in radiomic features across BrEaST, BUID, and BUS-UCLM cohorts, informing ensemble and harmonisation strategies.</p>
-      </div>
-      <div class="res-card">
-        <span class="res-icon">[ EXPLAINABILITY ]</span>
-        <div class="res-title">Clinical Interpretability</div>
-        <p class="res-desc">Feature attribution and model explainability approaches for clinical AI, supporting transparent and defensible diagnostic decision support tools.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<main id="main">
 
-<!-- PUBLICATIONS -->
-<section id="publications">
-  <div class="section-header">
-    <span class="section-num">03</span>
-    <h2>Publications</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="pub-list">
-
-    <div class="pub-item">
-      <div class="pub-year">2025</div>
-      <div class="pub-content">
-        <div class="pub-title">
-          <a href="https://doi.org/10.1007/s00259-025-07729-7" target="_blank">
-            Machine learning for automated differentiation in MIBG scintigraphy — ITA-mIBG multi-centre study
-          </a>
-        </div>
-        <div class="pub-meta"><em>European Journal of Nuclear Medicine and Molecular Imaging</em> · Bianconi F, Khan MU, et al.</div>
-        <div class="pub-tags">
-          <span class="tag tag-teal">Radiomics</span>
-          <span class="tag tag-accent">Multi-centre</span>
-          <span class="tag">Machine Learning</span>
-        </div>
+  <section class="page-section" id="home">
+    <div class="home-top">
+      <div class="avatar">MUK</div>
+      <div class="home-intro">
+        <h2>Muhammad Usama Khan</h2>
+        <p class="position">PhD · Industrial &amp; Information Engineering<br>Università degli Studi di Perugia, Italy</p>
+        <p>I am a researcher in medical image analysis and artificial intelligence. My work focuses on quantitative radiomics for breast ultrasound, deep learning-based lesion classification, and multi-site feature harmonisation. I completed my PhD in April 2026 under the supervision of <a href="https://www.bianconif.net" target="_blank">Prof. Francesco Bianconi</a>.</p>
       </div>
     </div>
 
-    <div class="pub-item">
-      <div class="pub-year">2024</div>
-      <div class="pub-content">
-        <div class="pub-title">
-          <a href="#" target="_blank">
-            Augmentation strategy analysis for breast ultrasound lesion classification using deep radiomics
-          </a>
-        </div>
-        <div class="pub-meta"><em>Under review</em> · Khan MU, Bianconi F</div>
-        <div class="pub-tags">
-          <span class="tag tag-teal">Breast Ultrasound</span>
-          <span class="tag tag-accent">Data Augmentation</span>
-          <span class="tag">PyTorch</span>
-        </div>
+
+
+    <div style="margin-top:1.5rem;">
+      <h3 style="font-family:'Crimson Pro',serif;font-size:1.2rem;font-weight:600;margin-bottom:0.6rem;">Research interests</h3>
+      <ul class="research-interests">
+        <li>Radiomics and quantitative imaging biomarkers</li>
+        <li>Medical image analysis (ultrasound, nuclear medicine)</li>
+        <li>Deep learning and transfer learning for medical AI</li>
+        <li>Data augmentation strategies for small clinical datasets</li>
+        <li>Multi-site feature harmonisation and heterogeneity analysis</li>
+      </ul>
+    </div>
+
+    <p class="keywords"><strong>Keywords:</strong> Breast Ultrasound · Radiomics · Deep Learning · PyTorch · Transfer Learning · Medical Image Analysis · Data Augmentation · ROI Extraction · Feature Harmonisation</p>
+  </section>
+
+  <section class="page-section" id="research">
+    <h1 class="section-title">Research</h1>
+    <div class="research-detail">
+      <h3>Breast Ultrasound Radiomics</h3>
+      <p>Development of end-to-end radiomic pipelines for benign vs. malignant lesion differentiation in breast ultrasound. Work covers ROI extraction, preprocessing (cubic spline resampling, non-local means denoising, intensity normalisation), and multi-site heterogeneity analysis across three public datasets: BrEaST, BUID, and BUS-UCLM.</p>
+
+      <h3>Deep Feature Descriptors for Medical Classification</h3>
+      <p>Comparative evaluation of pre-trained deep feature extractors — DenseNet121, ConvNeXt-Base, and Swin Transformer V2-S — as radiomic descriptors for breast ultrasound classification. Study included an ablation over 14 augmentation strategies to identify optimal training configurations per descriptor and dataset.</p>
+
+      <h3>Synchronized Image Augmentation</h3>
+      <p>Design and implementation of ROI-preserving data augmentation in PyTorch using TripleTransform wrappers, ensuring geometric consistency across image, bounding-box mask, and ROI mask channels simultaneously.</p>
+
+      <h3>Radiomics in Nuclear Medicine</h3>
+      <p>Collaboration on the ITA-mIBG multi-centre study applying machine learning to automated differentiation in MIBG scintigraphy. Results published in the European Journal of Nuclear Medicine and Molecular Imaging (2025).</p>
+    </div>
+  </section>
+
+  <section class="page-section" id="publications">
+    <h1 class="section-title">Publications</h1>
+
+    <div class="pub-entry">
+      <span class="pub-year-badge">2025</span>
+      <div class="pub-body">
+        <div class="pub-title"><a href="https://doi.org/10.1007/s00259-025-07729-7" target="_blank">Machine learning for automated differentiation in MIBG scintigraphy: the ITA-mIBG multi-centre study</a></div>
+        <div class="pub-meta">Bianconi F, <strong>Khan MU</strong>, et al. · <em>European Journal of Nuclear Medicine and Molecular Imaging</em>, 2025</div>
       </div>
     </div>
 
-    <div class="pub-item">
-      <div class="pub-year">2023</div>
-      <div class="pub-content">
-        <div class="pub-title">
-          <a href="#" target="_blank">
-            Multi-site radiomic feature harmonisation for breast ultrasound classification
-          </a>
-        </div>
-        <div class="pub-meta"><em>Conference / Journal — add your citation</em> · Khan MU, Bianconi F</div>
-        <div class="pub-tags">
-          <span class="tag tag-teal">Feature Harmonisation</span>
-          <span class="tag">BUS</span>
-        </div>
+    <div class="pub-entry">
+      <span class="pub-year-badge">2024</span>
+      <div class="pub-body">
+        <div class="pub-title">Augmentation strategy ablation for breast ultrasound lesion classification using deep radiomic descriptors</div>
+        <div class="pub-meta"><strong>Khan MU</strong>, Bianconi F · <em>Under review</em></div>
       </div>
     </div>
 
-    <div class="pub-item">
-      <div class="pub-year">2022</div>
-      <div class="pub-content">
-        <div class="pub-title">
-          <a href="#" target="_blank">
-            ROI extraction and preprocessing pipeline for quantitative breast ultrasound analysis
-          </a>
-        </div>
-        <div class="pub-meta"><em>Conference / Journal — add your citation</em> · Khan MU, Bianconi F</div>
-        <div class="pub-tags">
-          <span class="tag">Preprocessing</span>
-          <span class="tag tag-teal">ROI Extraction</span>
-        </div>
+    <div class="pub-entry">
+      <span class="pub-year-badge">2023</span>
+      <div class="pub-body">
+        <div class="pub-title"><a href="#">Add your publication title here</a></div>
+        <div class="pub-meta"><strong>Khan MU</strong>, Bianconi F · <em>Journal / Conference — update this</em></div>
       </div>
     </div>
 
-  </div>
-  <div style="margin-top: 1.5rem;">
-    <a href="https://github.com/usamakhan843" target="_blank" class="btn btn-outline">View code on GitHub ↗</a>
-  </div>
-</section>
+    <div class="pub-entry">
+      <span class="pub-year-badge">2022</span>
+      <div class="pub-body">
+        <div class="pub-title"><a href="#">Add your publication title here</a></div>
+        <div class="pub-meta"><strong>Khan MU</strong>, Bianconi F · <em>Journal / Conference — update this</em></div>
+      </div>
+    </div>
+  </section>
 
-<!-- SKILLS -->
-<section id="skills" style="max-width: 100%;">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    <div class="section-header">
-      <span class="section-num">04</span>
-      <h2>Technical Skills</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <div class="skill-group-title">ML / AI</div>
-        <div class="skill-item"><span class="skill-name">PyTorch</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Transfer Learning</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Scikit-learn</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">CNN Architectures</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Data Augmentation</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Medical Imaging</div>
-        <div class="skill-item"><span class="skill-name">Radiomics (PyRadiomics)</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Image Preprocessing</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">3D Slicer</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">ROI Segmentation</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Ultrasound Analysis</span><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Programming &amp; Tools</div>
-        <div class="skill-item"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">NumPy / SciPy</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Pandas / Matplotlib</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Git / GitHub</span><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
-        <div class="skill-item"><span class="skill-name">MATLAB</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
+  <section class="page-section" id="software">
+    <h1 class="section-title">Software</h1>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-header">
-    <span class="section-num">05</span>
-    <h2>Contact</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="contact-grid">
-    <div>
-      <p class="contact-intro">Open to postdoctoral,<br>research &amp; AI roles in Europe.</p>
-      <p class="contact-sub">
-        I am currently seeking positions in medical AI, radiomics, and clinical decision support — in industry or academia. Remote and on-site opportunities welcome.
-      </p>
-      <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-        <a href="mailto:usamakhan843@gmail.com" class="btn btn-primary">Send Email</a>
-        <a href="https://linkedin.com/in/usama-khan-0a509211a/" target="_blank" class="btn btn-outline">LinkedIn</a>
-      </div>
+    <div class="software-card">
+      <h3><a href="https://github.com/usamakhan843" target="_blank">BUS Radiomics Pipeline</a></h3>
+      <p>End-to-end PyTorch pipeline for breast ultrasound radiomic feature extraction and classification. Includes synchronized augmentation, cubic spline resampling, non-local means denoising, and intensity normalisation. Supports BrEaST, BUID, and BUS-UCLM datasets.</p>
+      <span class="sw-tag">Python</span><span class="sw-tag">PyTorch</span><span class="sw-tag">PyRadiomics</span><span class="sw-tag">Medical Imaging</span>
     </div>
-    <div class="contact-items">
-      <div class="contact-item">
-        <span class="ci-label">Email</span>
-        <span class="ci-value"><a href="mailto:usamakhan843@gmail.com">usamakhan843@gmail.com</a></span>
-      </div>
-      <div class="contact-item">
-        <span class="ci-label">LinkedIn</span>
-        <span class="ci-value"><a href="https://linkedin.com/in/usama-khan-0a509211a/" target="_blank">Usama Khan</a></span>
-      </div>
-      <div class="contact-item">
-        <span class="ci-label">GitHub</span>
-        <span class="ci-value"><a href="https://github.com/usamakhan843" target="_blank">github.com/usamakhan843</a></span>
-      </div>
-      <div class="contact-item">
-        <span class="ci-label">Location</span>
-        <span class="ci-value">Perugia, Italy · Open to relocation in Europe</span>
-      </div>
-      <div class="contact-item">
-        <span class="ci-label">Status</span>
-        <span class="ci-value" style="color: var(--teal);">✦ Available for opportunities</span>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <span class="footer-copy">© 2026 Muhammad Usama Khan. All rights reserved.</span>
-  <span class="footer-built">built with HTML · hosted on GitHub Pages</span>
-</footer>
+    <div class="software-card">
+      <h3><a href="https://github.com/usamakhan843" target="_blank">Deep Feature Descriptor Benchmark</a></h3>
+      <p>Benchmarking framework comparing DenseNet121, ConvNeXt-Base, and Swin-V2-S as deep radiomic descriptors across multiple ultrasound datasets with 14 augmentation strategies.</p>
+      <span class="sw-tag">Python</span><span class="sw-tag">PyTorch</span><span class="sw-tag">Transfer Learning</span>
+    </div>
+  </section>
+
+  <section class="page-section" id="datasets">
+    <h1 class="section-title">Datasets</h1>
+
+    <div class="dataset-card">
+      <h3>BrEaST — Breast Ultrasound Dataset</h3>
+      <p>Public breast ultrasound dataset used for benign/malignant classification experiments, with lesion ROI masks and labels. Primary cohort in the augmentation ablation study.</p>
+    </div>
+
+    <div class="dataset-card">
+      <h3>BUID — Breast Ultrasound Image Dataset</h3>
+      <p>Standard benchmark for breast ultrasound lesion analysis, used for cross-dataset evaluation and multi-site heterogeneity assessment.</p>
+    </div>
+
+    <div class="dataset-card">
+      <h3>BUS-UCLM</h3>
+      <p>Breast ultrasound dataset from UCLM, used as the third cohort in comparative radiomic descriptor evaluation.</p>
+    </div>
+  </section>
+
+  <section class="page-section" id="contacts">
+    <h1 class="section-title">Contacts</h1>
+
+    <table class="contact-table">
+      <tr>
+        <td>Email</td>
+        <td><a href="mailto:usamakhan843@gmail.com">usamakhan843@gmail.com</a></td>
+      </tr>
+      <tr>
+        <td>LinkedIn</td>
+        <td><a href="https://linkedin.com/in/usama-khan-0a509211a/" target="_blank">Usama Khan</a></td>
+      </tr>
+      <tr>
+        <td>GitHub</td>
+        <td><a href="https://github.com/usamakhan843" target="_blank">github.com/usamakhan843</a></td>
+      </tr>
+      <tr>
+        <td>Affiliation</td>
+        <td>Università degli Studi di Perugia, Department of Engineering, Perugia, Italy</td>
+      </tr>
+      <tr>
+        <td>Location</td>
+        <td>Perugia, Italy · Open to relocation in Europe</td>
+      </tr>
+    </table>
+
+    <div class="available-badge">✦ Available for postdoctoral and research positions</div>
+  </section>
+
+</main>
+
+<script>
+const sections = document.querySelectorAll('.page-section');
+const navLinks = document.querySelectorAll('.sidebar-nav a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+  navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
+});
+</script>
 
 </body>
 </html>
