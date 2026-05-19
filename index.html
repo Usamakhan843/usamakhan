@@ -124,6 +124,7 @@ h1.section-title {
   border-bottom: 2px solid #2c2c2a;
 }
 
+/* HOME */
 .home-top {
   display: flex;
   gap: 2.5rem;
@@ -156,33 +157,9 @@ h1.section-title {
   font-style: italic;
 }
 
-.home-intro p { font-size: 0.93rem; color: #444; line-height: 1.75; }
-
+.home-intro p { font-size: 0.93rem; color: #444; line-height: 1.8; }
 .home-intro p a { color: #3a5a8a; text-decoration: none; }
 .home-intro p a:hover { text-decoration: underline; }
-
-.news-block { margin-top: 1.5rem; }
-
-.news-block h3 {
-  font-family: 'Crimson Pro', serif;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
-  color: #2c2c2a;
-}
-
-.news-list {
-  list-style: disc;
-  padding-left: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-}
-
-.news-list li { font-size: 0.9rem; color: #444; line-height: 1.6; }
-
-.news-list li a { color: #3a5a8a; text-decoration: none; }
-.news-list li a:hover { text-decoration: underline; }
 
 .research-interests {
   list-style: disc;
@@ -190,22 +167,35 @@ h1.section-title {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
 }
 
 .research-interests li { font-size: 0.92rem; color: #444; line-height: 1.6; }
 
-.research-detail h3 {
+/* RESEARCH */
+.modality-block {
+  margin-top: 1.6rem;
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid #e8e6e0;
+}
+
+.modality-block:last-child { border-bottom: none; }
+
+.modality-block h3 {
   font-family: 'Crimson Pro', serif;
   font-size: 1.15rem;
   font-weight: 600;
   color: #2c2c2a;
-  margin-bottom: 0.4rem;
-  margin-top: 1.4rem;
+  margin-bottom: 0.45rem;
 }
 
-.research-detail p { font-size: 0.9rem; color: #555; line-height: 1.75; }
+.modality-block p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.8;
+}
 
+/* PUBLICATIONS */
 .pub-entry {
   display: flex;
   gap: 1rem;
@@ -226,6 +216,7 @@ h1.section-title {
   min-width: 40px;
   text-align: center;
   margin-top: 0.2rem;
+  white-space: nowrap;
 }
 
 .pub-body .pub-title {
@@ -238,11 +229,21 @@ h1.section-title {
 
 .pub-body .pub-title a { color: #3a5a8a; text-decoration: none; }
 .pub-body .pub-title a:hover { text-decoration: underline; }
-
 .pub-body .pub-meta { font-size: 0.82rem; color: #777; line-height: 1.5; }
 .pub-body .pub-meta em { font-style: italic; }
 
-.software-card {
+.pub-section-label {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c2c2a;
+  margin: 1.5rem 0 0.4rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #d8d6cf;
+}
+
+/* PROJECTS */
+.project-card {
   border: 1px solid #d8d6cf;
   border-radius: 3px;
   padding: 1.2rem 1.4rem;
@@ -250,7 +251,7 @@ h1.section-title {
   background: #fff;
 }
 
-.software-card h3 {
+.project-card h3 {
   font-family: 'Crimson Pro', serif;
   font-size: 1.05rem;
   font-weight: 600;
@@ -258,10 +259,9 @@ h1.section-title {
   margin-bottom: 0.3rem;
 }
 
-.software-card h3 a { color: #3a5a8a; text-decoration: none; }
-.software-card h3 a:hover { text-decoration: underline; }
-
-.software-card p { font-size: 0.87rem; color: #555; line-height: 1.65; }
+.project-card h3 a { color: #3a5a8a; text-decoration: none; }
+.project-card h3 a:hover { text-decoration: underline; }
+.project-card p { font-size: 0.87rem; color: #555; line-height: 1.7; }
 
 .sw-tag {
   display: inline-block;
@@ -275,16 +275,7 @@ h1.section-title {
   margin-top: 0.5rem;
 }
 
-.talk-entry {
-  padding: 0.9rem 0;
-  border-bottom: 1px solid #e8e6e0;
-}
-
-.talk-entry:last-child { border-bottom: none; }
-
-.talk-title { font-size: 0.92rem; font-weight: 500; color: #2c2c2a; margin-bottom: 0.2rem; }
-.talk-meta { font-size: 0.82rem; color: #777; font-style: italic; }
-
+/* DATASETS */
 .dataset-card {
   border: 1px solid #d8d6cf;
   border-radius: 3px;
@@ -301,18 +292,65 @@ h1.section-title {
   margin-bottom: 0.3rem;
 }
 
-.dataset-card p { font-size: 0.86rem; color: #555; line-height: 1.65; }
+.dataset-card h3 a { color: #3a5a8a; text-decoration: none; }
+.dataset-card h3 a:hover { text-decoration: underline; }
+.dataset-card p { font-size: 0.86rem; color: #555; line-height: 1.7; }
 
-.teaching-entry {
-  padding: 0.8rem 0;
-  border-bottom: 1px solid #e8e6e0;
+.ds-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  background: #f0f4ec;
+  border: 1px solid #c8d8b8;
+  border-radius: 2px;
+  color: #4a6a3a;
+  margin-right: 0.3rem;
+  margin-top: 0.5rem;
 }
 
-.teaching-entry:last-child { border-bottom: none; }
+/* LINK CARDS */
+.link-card {
+  display: block;
+  text-decoration: none;
+  border: 1px solid #d8d6cf;
+  border-radius: 3px;
+  padding: 0.9rem 1.2rem;
+  margin-bottom: 0.6rem;
+  background: #fff;
+  transition: border-color 0.15s, background 0.15s;
+}
 
-.teaching-title { font-size: 0.92rem; font-weight: 500; color: #2c2c2a; }
-.teaching-meta { font-size: 0.82rem; color: #777; margin-top: 0.15rem; }
+.link-card:hover {
+  border-color: #3a5a8a;
+  background: #f5f8fd;
+}
 
+.link-card-nolink {
+  cursor: default;
+}
+
+.link-card-nolink:hover {
+  border-color: #d8d6cf;
+  background: #fff;
+}
+
+.link-card-title {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: #3a5a8a;
+  margin-bottom: 0.2rem;
+}
+
+.link-card-nolink .link-card-title {
+  color: #2c2c2a;
+}
+
+.link-card-sub {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* CONTACTS */
 .contact-table { width: 100%; border-collapse: collapse; }
 
 .contact-table tr td {
@@ -348,13 +386,6 @@ h1.section-title {
   margin-top: 1rem;
 }
 
-.keywords {
-  font-size: 0.85rem;
-  color: #888;
-  margin-top: 1.2rem;
-  font-style: italic;
-}
-
 @media (max-width: 768px) {
   #sidebar {
     position: static;
@@ -382,7 +413,7 @@ h1.section-title {
     <li><a href="#home" class="active">Home</a></li>
     <li><a href="#research">Research</a></li>
     <li><a href="#publications">Publications</a></li>
-    <li><a href="#software">Software</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#datasets">Datasets</a></li>
     <li><a href="#contacts">Contacts</a></li>
   </ul>
@@ -393,125 +424,202 @@ h1.section-title {
     <a href="https://github.com/usamakhan843" target="_blank">GitHub</a>
   </div>
 
-  <div class="sidebar-updated">Last updated on<br>2 May 2026</div>
+  <div class="sidebar-updated">Last updated on<br>20 May 2026</div>
 </aside>
 
 <main id="main">
 
+  <!-- HOME -->
   <section class="page-section" id="home">
     <div class="home-top">
       <img src="MyImage.jpeg" alt="Muhammad Usama Khan" class="avatar">
       <div class="home-intro">
         <h2>Muhammad Usama Khan</h2>
-        <p class="position">PhD · Industrial &amp; Information Engineering<br>Università degli Studi di Perugia, Italy</p>
-        <p>I am a researcher in medical image analysis and artificial intelligence. My work focuses on quantitative radiomics for breast ultrasound, deep learning-based lesion classification, and multi-site feature harmonisation. I completed my PhD in April 2026 under the supervision of <a href="https://www.bianconif.net" target="_blank">Prof. Francesco Bianconi</a>.</p>
+        <p class="position">PhD · Industrial &amp; Information Engineering<br>
+        Università degli Studi di Perugia, Italy</p>
+        <p>
+          I am a medical imaging researcher specialising in radiomics and AI-based lesion analysis across ultrasound, CT, and PET/CT. I completed my PhD in April 2026 at the University of Perugia under <a href="https://www.bianconif.net" target="_blank">Prof. Francesco Bianconi</a>, with co-supervision from Prof. Sabah Jassim and Prof. Hongbo Du at the University of Buckingham.
+        </p>
       </div>
     </div>
 
-
-
-    <div style="margin-top:1.5rem;">
-      <h3 style="font-family:'Crimson Pro',serif;font-size:1.2rem;font-weight:600;margin-bottom:0.6rem;">Research interests</h3>
+    <div style="margin-top: 1.2rem;">
+      <strong style="font-size:0.88rem; color:#555; text-transform:uppercase; letter-spacing:0.06em;">Research interests</strong>
       <ul class="research-interests">
         <li>Radiomics and quantitative imaging biomarkers</li>
-        <li>Medical image analysis (ultrasound, nuclear medicine)</li>
-        <li>Deep learning and transfer learning for medical AI</li>
-        <li>Data augmentation strategies for small clinical datasets</li>
-        <li>Multi-site feature harmonisation and heterogeneity analysis</li>
+        <li>Quantitative medical image analysis</li>
+        <li>Computer vision for clinical applications</li>
+        <li>Machine learning and deep learning for medical AI</li>
       </ul>
     </div>
-
-    <p class="keywords"><strong>Keywords:</strong> Breast Ultrasound · Radiomics · Deep Learning · PyTorch · Transfer Learning · Medical Image Analysis · Data Augmentation · ROI Extraction · Feature Harmonisation</p>
   </section>
 
+  <!-- RESEARCH -->
   <section class="page-section" id="research">
     <h1 class="section-title">Research</h1>
-    <div class="research-detail">
-      <h3>Breast Ultrasound Radiomics</h3>
-      <p>Development of end-to-end radiomic pipelines for benign vs. malignant lesion differentiation in breast ultrasound. Work covers ROI extraction, preprocessing (cubic spline resampling, non-local means denoising, intensity normalisation), and multi-site heterogeneity analysis across three public datasets: BrEaST, BUID, and BUS-UCLM.</p>
+    <p style="font-size:0.92rem; color:#555; line-height:1.8;">
+      My doctoral research focused on solid tumour characterisation across multiple imaging modalities. The core theme is quantitative feature extraction — both handcrafted radiomic descriptors and deep feature embeddings — to support clinical decision-making, with attention to ROI integrity, feature stability, and multi-site generalisability.
+    </p>
 
-      <h3>Deep Feature Descriptors for Medical Classification</h3>
-      <p>Comparative evaluation of pre-trained deep feature extractors — DenseNet121, ConvNeXt-Base, and Swin Transformer V2-S — as radiomic descriptors for breast ultrasound classification. Study included an ablation over 14 augmentation strategies to identify optimal training configurations per descriptor and dataset.</p>
+    <div class="modality-block">
+      <h3>Multi-centre Breast Ultrasound Classification</h3>
+      <p>
+        Ultrasound is a widely used, non-ionising modality for breast lesion assessment, but operator dependency and acquisition variability make automated classification challenging. I built end-to-end radiomics pipelines to distinguish benign from malignant lesions across three independent public datasets (BrEaST, BUID and BUS-UCLM), benchmarking pre-trained CNN and vision-transformer descriptors (DenseNet121, ConvNeXt-Base, Swin-V2-S) against conventional radiomic features. Ensemble fusion of complementary descriptors reached 81 to 82% accuracy across datasets. A systematic augmentation ablation across 14 strategies further quantified the effect of preprocessing and geometric or photometric perturbations on lesion-level classification.
+      </p>
+    </div>
 
-      <h3>Synchronized Image Augmentation</h3>
-      <p>Design and implementation of ROI-preserving data augmentation in PyTorch using TripleTransform wrappers, ensuring geometric consistency across image, bounding-box mask, and ROI mask channels simultaneously.</p>
+    <div class="modality-block">
+      <h3>Lung Nodule Classification on CT Scans</h3>
+      <p>
+        CT produces greyscale volumetric data encoding tissue density through Hounsfield units, while leading CNNs are pre-trained on natural RGB images. To bridge this gap, I investigated pseudo-colour representations of lung nodules: CT greyscale slices are mapped into three-channel colour images where each channel encodes a distinct tissue density range, enabling RGB-trained CNNs to process CT data without architectural changes. Evaluated on the LIDC-IDRI benchmark, this approach achieved 88.5% classification accuracy.
+      </p>
+    </div>
 
-      <h3>Radiomics in Nuclear Medicine</h3>
-      <p>Collaboration on the ITA-mIBG multi-centre study applying machine learning to automated differentiation in MIBG scintigraphy. Results published in the European Journal of Nuclear Medicine and Molecular Imaging (2025).</p>
+    <div class="modality-block">
+      <h3>Head and Neck Cancer on FDG PET/CT</h3>
+      <p>
+        Small-volume cervical lymph nodes are frequently missed or inconsistently delineated in routine clinical practice. I contributed to FDG PET/CT radiomics studies investigating whether quantitative features can assist clinicians in identifying nodal involvement that may be overlooked by the human eye. The work included a comparative evaluation of six semi-automated tumour delineation methods on small-volume nodal lesions, and a study demonstrating that PET-derived radiomic features carry predictive value for cervical nodal status.
+      </p>
     </div>
   </section>
 
+  <!-- PUBLICATIONS -->
   <section class="page-section" id="publications">
     <h1 class="section-title">Publications</h1>
+
+    <div class="pub-section-label">Journal Articles</div>
 
     <div class="pub-entry">
       <span class="pub-year-badge">2025</span>
       <div class="pub-body">
-        <div class="pub-title"><a href="https://doi.org/10.1007/s00259-025-07729-7" target="_blank">Machine learning for automated differentiation in MIBG scintigraphy: the ITA-mIBG multi-centre study</a></div>
-        <div class="pub-meta">Bianconi F, <strong>Khan MU</strong>, et al. · <em>European Journal of Nuclear Medicine and Molecular Imaging</em>, 2025</div>
+        <div class="pub-title">
+          <a href="https://doi.org/10.1177/01617346251362168" target="_blank">
+            Experimental assessment of conventional features, CNN-based features and ensemble schemes for discriminating benign vs. malignant lesions on breast ultrasound images
+          </a>
+        </div>
+        <div class="pub-meta">Bianconi F, <strong>Khan MU</strong>, Du H, Jassim S · <em>Ultrasonic Imaging</em>, 2025 (online first)</div>
       </div>
     </div>
 
     <div class="pub-entry">
       <span class="pub-year-badge">2024</span>
       <div class="pub-body">
-        <div class="pub-title">Augmentation strategy ablation for breast ultrasound lesion classification using deep radiomic descriptors</div>
-        <div class="pub-meta"><strong>Khan MU</strong>, Bianconi F · <em>Under review</em></div>
+        <div class="pub-title">
+          <a href="https://doi.org/10.3390/cancers16223759" target="_blank">
+            Radiomics features from FDG PET can help predict cervical nodal status in patients with head and neck cancer
+          </a>
+        </div>
+        <div class="pub-meta">Bianconi F, Salis R, Fravolini ML, <strong>Khan MU</strong>, Filippi L, Marongiu A, Nuvoli S, Spanu A, Palumbo B · <em>Cancers</em>, 2024;16(22):3759</div>
       </div>
     </div>
 
     <div class="pub-entry">
       <span class="pub-year-badge">2023</span>
       <div class="pub-body">
-        <div class="pub-title"><a href="#">Add your publication title here</a></div>
-        <div class="pub-meta"><strong>Khan MU</strong>, Bianconi F · <em>Journal / Conference — update this</em></div>
+        <div class="pub-title">
+          <a href="https://doi.org/10.3390/s23187952" target="_blank">
+            Performance analysis of six semi-automated tumour delineation methods on FDG PET/CT in patients with head and neck cancer
+          </a>
+        </div>
+        <div class="pub-meta">Bianconi F, Salis R, Fravolini ML, <strong>Khan MU</strong>, Minestrini M, Filippi L, Marongiu A, Nuvoli S, Spanu A, Palumbo B · <em>Sensors</em>, 2023;23(18):7952</div>
+      </div>
+    </div>
+
+    <div class="pub-section-label" style="margin-top:1.8rem;">Conference Proceedings</div>
+
+    <div class="pub-entry">
+      <span class="pub-year-badge">2025</span>
+      <div class="pub-body">
+        <div class="pub-title">
+          <a href="https://doi.org/10.1109/ICCAD64771.2025.11099421" target="_blank">
+            Hand-crafted vs. deep CNN features to distinguish benign from malignant lesions in breast ultrasound images
+          </a>
+        </div>
+        <div class="pub-meta"><strong>Khan MU</strong>, Bianconi F, Du H, Jassim S · <em>IEEE ICCAD'25</em>, Barcelona, July 2025</div>
       </div>
     </div>
 
     <div class="pub-entry">
-      <span class="pub-year-badge">2022</span>
+      <span class="pub-year-badge">2024</span>
       <div class="pub-body">
-        <div class="pub-title"><a href="#">Add your publication title here</a></div>
-        <div class="pub-meta"><strong>Khan MU</strong>, Bianconi F · <em>Journal / Conference — update this</em></div>
+        <div class="pub-title">
+          <a href="https://doi.org/10.1109/ICCAD60883.2024.10553720" target="_blank">
+            Sensitivity of radiomics features to region volume: A CT phantom study
+          </a>
+        </div>
+        <div class="pub-meta"><strong>Khan MU</strong>, Bianconi F, Fravolini ML, Palumbo B · <em>IEEE ICCAD</em>, Paris, May 2024, pp. 1–5</div>
       </div>
     </div>
-  </section>
 
-  <section class="page-section" id="software">
-    <h1 class="section-title">Software</h1>
-
-    <div class="software-card">
-      <h3><a href="https://github.com/usamakhan843" target="_blank">BUS Radiomics Pipeline</a></h3>
-      <p>End-to-end PyTorch pipeline for breast ultrasound radiomic feature extraction and classification. Includes synchronized augmentation, cubic spline resampling, non-local means denoising, and intensity normalisation. Supports BrEaST, BUID, and BUS-UCLM datasets.</p>
-      <span class="sw-tag">Python</span><span class="sw-tag">PyTorch</span><span class="sw-tag">PyRadiomics</span><span class="sw-tag">Medical Imaging</span>
+    <div class="pub-entry">
+      <span class="pub-year-badge">2024</span>
+      <div class="pub-body">
+        <div class="pub-title">
+          <a href="https://doi.org/10.1007/978-3-031-72845-7_16" target="_blank">
+            Classification of lung nodules on CT via pseudo-colour images and deep features from pre-trained convolutional networks
+          </a>
+        </div>
+        <div class="pub-meta">Bianconi F, Fravolini ML, Caltana E, <strong>Khan MU</strong>, Palumbo B · <em>CCIW 2024</em>, LNCS vol. 15193, pp. 221–232, Springer</div>
+      </div>
     </div>
 
-    <div class="software-card">
-      <h3><a href="https://github.com/usamakhan843" target="_blank">Deep Feature Descriptor Benchmark</a></h3>
-      <p>Benchmarking framework comparing DenseNet121, ConvNeXt-Base, and Swin-V2-S as deep radiomic descriptors across multiple ultrasound datasets with 14 augmentation strategies.</p>
-      <span class="sw-tag">Python</span><span class="sw-tag">PyTorch</span><span class="sw-tag">Transfer Learning</span>
-    </div>
   </section>
 
+  <!-- PROJECTS -->
+  <section class="page-section" id="projects">
+    <h1 class="section-title">Projects</h1>
+    <p style="font-size:0.9rem; color:#666; margin-bottom:1.2rem;">Open-source pipelines built on public medical imaging datasets. Click to view on GitHub.</p>
+
+    <a href="https://github.com/usamakhan843/MRI_breast_dicom_metadata" target="_blank" class="link-card">
+      <div class="link-card-title">DICOM Metadata Extraction and Anonymisation</div>
+      <div class="link-card-sub">Breast MRI · QIN-BREAST-02 · Python · pydicom</div>
+    </a>
+
+    <a href="https://github.com/usamakhan843/dicom_to_nifti_breast_mri" target="_blank" class="link-card">
+      <div class="link-card-title">DICOM to NIfTI Conversion Pipeline</div>
+      <div class="link-card-sub">4D Breast MRI · 31,770 slices to 170 volumes · Python · SimpleITK</div>
+    </a>
+
+  </section>
+
+  <!-- DATASETS -->
   <section class="page-section" id="datasets">
     <h1 class="section-title">Datasets</h1>
+    <p style="font-size:0.9rem; color:#666; margin-bottom:1.2rem;">Public datasets used across my doctoral research. Click to access the source.</p>
 
-    <div class="dataset-card">
-      <h3>BrEaST — Breast Ultrasound Dataset</h3>
-      <p>Public breast ultrasound dataset used for benign/malignant classification experiments, with lesion ROI masks and labels. Primary cohort in the augmentation ablation study.</p>
+    <a href="https://www.kaggle.com/datasets/sabahilyas/breast-ultrasound-dataset-2022" target="_blank" class="link-card">
+      <div class="link-card-title">BrEaST</div>
+      <div class="link-card-sub">Breast Ultrasound · 252 cases · Benign / Malignant</div>
+    </a>
+
+    <a href="https://www.kaggle.com/datasets/aryashah2k/breast-ultrasound-images-dataset" target="_blank" class="link-card">
+      <div class="link-card-title">BUID — Breast Ultrasound Images Dataset</div>
+      <div class="link-card-sub">Breast Ultrasound · 232 cases · Benign / Malignant</div>
+    </a>
+
+    <a href="https://data.mendeley.com/datasets/wmy84gzngw/1" target="_blank" class="link-card">
+      <div class="link-card-title">BUS-UCLM</div>
+      <div class="link-card-sub">Breast Ultrasound · 281 cases · Universidad de Castilla-La Mancha</div>
+    </a>
+
+    <a href="https://wiki.cancerimagingarchive.net/display/Public/LIDC-IDRI" target="_blank" class="link-card">
+      <div class="link-card-title">LIDC-IDRI</div>
+      <div class="link-card-sub">CT · Lung Nodules · Multi-reader annotations</div>
+    </a>
+
+    <div class="link-card link-card-nolink">
+      <div class="link-card-title">Head and Neck Cancer FDG PET/CT Cohort</div>
+      <div class="link-card-sub">PET/CT · Cervical lymph node assessment · Clinical dataset</div>
     </div>
 
-    <div class="dataset-card">
-      <h3>BUID — Breast Ultrasound Image Dataset</h3>
-      <p>Standard benchmark for breast ultrasound lesion analysis, used for cross-dataset evaluation and multi-site heterogeneity assessment.</p>
-    </div>
+    <a href="https://wiki.cancerimagingarchive.net/display/Public/QIN-BREAST-02" target="_blank" class="link-card">
+      <div class="link-card-title">QIN-BREAST-02</div>
+      <div class="link-card-sub">DCE Breast MRI · 13 subjects · TCIA · 3D and 4D series</div>
+    </a>
 
-    <div class="dataset-card">
-      <h3>BUS-UCLM</h3>
-      <p>Breast ultrasound dataset from UCLM, used as the third cohort in comparative radiomic descriptor evaluation.</p>
-    </div>
   </section>
 
+  <!-- CONTACTS -->
   <section class="page-section" id="contacts">
     <h1 class="section-title">Contacts</h1>
 
@@ -534,7 +642,7 @@ h1.section-title {
       </tr>
       <tr>
         <td>Location</td>
-        <td>Perugia, Italy · Open to relocation in Europe</td>
+        <td>Italy · Open to relocation in Europe</td>
       </tr>
     </table>
 
